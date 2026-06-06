@@ -1,0 +1,32 @@
+/* ── LINK 버튼 ── */
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  background-color: var(--accent);
+  color: var(--btn-text);
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background-color var(--transition), opacity var(--transition),
+              transform 0.12s;
+  border: none;
+  cursor: pointer;
+}
+.btn-link::after {
+  content: '↗';
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+.btn-link:hover {
+  opacity: 0.78;
+  transform: translateY(-1px);
+}
+.btn-link:hover::after {
+  transform: translate(2px, -2px);
+}
+.btn-link:active { transform: translateY(0); }

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>포트폴리오 — 김명준</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="lang.css" />
+  <script src="theme.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">Main</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환">
+        <span class="icon">🌙</span>
+        <span class="label">Dark</span>
+      </button>
+    </header>
+
+    <main class="portpolio">
+      <h1>김명준<br>포트폴리오</h1>
+      <p class="subtitle">정보보호학과 · 웹 프로그래밍</p>
+    </main>
+
+    <section class="projects">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="project-item">
+        <h3><a href="hcjdemo.html">HCJDemo 프로젝트</a></h3>
+        <span class="year">2026</span>
+      </div>
+
+      <div class="project-item">
+        <h3><a href="tag.html">HTML 기본 태그</a></h3>
+        <span class="year">2026</span>
+      </div>
+
+      <div class="project-item">
+        <h3><a href="project.html">웹 프로그래밍 팀 프로젝트</a></h3>
+        <span class="year">2026</span>
+      </div>
+
+      <div class="project-item">
+        <h3><a href="project_v2.html">웹 프로그래밍 팀 프로젝트 ver2.0</a></h3>
+        <span class="year">2026</span>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════
+         언어 사용 통계
+    ══════════════════════════════ -->
+    <section class="lang-section">
+      <h2 class="section-title">Languages Used</h2>
+
+      <!-- 요약 카드 -->
+      <div class="lang-summary" id="langSummary"></div>
+
+      <!-- 통합 비율 바 -->
+      <div class="overview-label">전체 비율</div>
+      <div class="lang-overview" id="langOverview"></div>
+      <div class="overview-legend" id="overviewLegend"></div>
+
+      <!-- 언어별 바 차트 -->
+      <div class="lang-bars" id="langBars"></div>
+    </section>
+
+    <footer class="footer">
+      <p>정보보호학과 김명준</p>
+      <div class="social-links">
+        <a href="https://blog75369.tistory.com/" target="_blank">Blog</a>
+        <a href="https://github.com/k35864316-spec" target="_blank">GitHub</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="lang.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── CSS 변수 (라이트 / 다크) ── */
+:root {
+  --bg:          #fafafa;
+  --bg-secondary:#f2f2f0;
+  --surface:     #ffffff;
+  --border:      #e8e8e4;
+  --text:        #111110;
+  --text-sub:    #6f6e6b;
+  --text-muted:  #a8a8a3;
+  --accent:      #111110;
+  --accent-hover:#333330;
+  --btn-text:    #fafafa;
+  --tag-bg:      #edede8;
+  --tag-text:    #555552;
+
+  --radius: 10px;
+  --transition: 0.22s ease;
+}
+
+[data-theme="dark"] {
+  --bg:          #111110;
+  --bg-secondary:#1a1a18;
+  --surface:     #1e1e1c;
+  --border:      #2e2e2b;
+  --text:        #f0efec;
+  --text-sub:    #9d9c97;
+  --text-muted:  #6b6b66;
+  --accent:      #f0efec;
+  --accent-hover:#c8c7c2;
+  --btn-text:    #111110;
+  --tag-bg:      #2a2a27;
+  --tag-text:    #9d9c97;
+}
+
+/* ── 리셋 & 기본 ── */
+*, *::before, *::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  transition: background-color var(--transition), color var(--transition);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 레이아웃 ── */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 28px 100px;
+}
+
+/* ── 헤더 ── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 96px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+  transition: opacity var(--transition);
+}
+.logo a:hover { opacity: 0.55; }
+
+/* ── 다크모드 토글 버튼 ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  color: var(--text-sub);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition),
+              border-color var(--transition), transform 0.12s;
+}
+.theme-toggle:hover {
+  color: var(--text);
+  background: var(--border);
+  transform: scale(1.03);
+}
+.theme-toggle .icon {
+  font-size: 0.95rem;
+  transition: transform 0.4s ease;
+}
+[data-theme="dark"] .theme-toggle .icon { transform: rotate(180deg); }
+
+/* ── 메인 히어로 ── */
+.portpolio {
+  margin-bottom: 80px;
+}
+.portpolio h1 {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.portpolio .subtitle {
+  font-size: 1.05rem;
+  color: var(--text-sub);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* ── 섹션 제목 ── */
+.section-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 28px;
+}
+
+/* ── 프로젝트 목록 (index.html) ── */
+.project-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  transition: opacity var(--transition);
+}
+.project-item:last-child { border-bottom: none; }
+.project-item:hover { opacity: 0.75; }
+
+.project-item h3 { margin-bottom: 4px; }
+.project-item h3 a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: color var(--transition);
+}
+.project-item h3 a:hover { color: var(--text-sub); }
+
+.project-item .year {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── 상세 페이지 프로젝트 아이템 ── */
+.project-detail p {
+  color: var(--text-sub);
+  font-size: 0.92rem;
+  margin-top: 6px;
+  line-height: 1.75;
+}
+.project-detail .feature-list {
+  list-style: none;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.project-detail .feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-sub);
+}
+.project-detail .feature-list li::before {
+  content: '—';
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── 태그 ── */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.tag {
+  display: inline-block;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  transition: background var(--transition);
+}
+
+/* ── 버튼 그룹 ── */
+.button-group { margin-top: 22px; }
+
+/* ── 푸터 ── */
+.footer {
+  margin-top: 100px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.social-links { display: flex; gap: 16px; }
+.social-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.social-links a:hover { color: var(--text); }
+
+/* ── 페이지 페이드인 애니메이션 ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.container > * {
+  animation: fadeUp 0.5s ease both;
+}
+.container > *:nth-child(1) { animation-delay: 0s; }
+.container > *:nth-child(2) { animation-delay: 0.07s; }
+.container > *:nth-child(3) { animation-delay: 0.14s; }
+.container > *:nth-child(4) { animation-delay: 0.21s; }
+.container > *:nth-child(5) { animation-delay: 0.28s; }
+
+/* ── 반응형 ── */
+@media (max-width: 480px) {
+  .container { padding: 40px 20px 80px; }
+  .header { margin-bottom: 64px; }
+  .portpolio { margin-bottom: 60px; }
+  .footer { flex-direction: column; align-items: flex-start; }
+}
